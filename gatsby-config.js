@@ -10,13 +10,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        path: `${__dirname}/content`,
+        name: 'posts',
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-mdx`,
       options: {
+        root: __dirname,
+        extensions: ['.md', '.mdx'],
         plugins: [
           {
             resolve: `gatsby-remark-images`,
